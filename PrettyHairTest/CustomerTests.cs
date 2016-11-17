@@ -28,13 +28,28 @@ namespace PrettyHairTest
         }
 
         [TestMethod]
-        public void ShouldCapitalizeEveryWork()
+        public void ShouldCapitalizeEveryWord()
         {
             customer.Name = "anna maria";
             Assert.AreEqual("Anna Maria", customer.ChangeName(customer.Name));
         }
 
-       [TestMethod]
+        [TestMethod]
+        public void ShouldCapitalizeFirstLetterButKeepTheRestLower()
+        {
+            customer.Name = "isAbella";
+            Assert.AreEqual("Isabella", customer.ChangeName(customer.Name));
+        }
+
+        [TestMethod]
+        public void ShouldCapitalizeFirstLetterButKeepTheRestLowerOnEveryWord()
+        {
+            customer.Name = "isAbella gREen";
+            Assert.AreEqual("Isabella Green", customer.ChangeName(customer.Name));
+        }
+
+
+        [TestMethod]
         public void ShouldSeparateEachPairOfNumbers()
         {
             customer.Phone = 22340942;

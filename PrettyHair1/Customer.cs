@@ -28,7 +28,7 @@ namespace PrettyHair1
             {
                 string firstLetter = word.Substring(0, 1);
                 firstLetter = firstLetter.ToUpper();
-                holdingWord = holdingWord + " " + firstLetter + word.Substring(1);
+                holdingWord = holdingWord + " " + firstLetter + word.Substring(1).ToLower();
             }
             return holdingWord.Trim();
         }
