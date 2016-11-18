@@ -47,7 +47,7 @@ namespace PrettyHairTest
             customer.Name = "isAbella gREen";
             Assert.AreEqual("Isabella Green", customer.ChangeName(customer.Name));
         }
-
+        
 
         [TestMethod]
         public void ShouldSeparateEachPairOfNumbers()
@@ -55,6 +55,20 @@ namespace PrettyHairTest
             customer.Phone = 22340942;
             Assert.AreEqual("22 34 09 42", customer.SplitPhoneNumber(customer.Phone));
         } 
+
+        [TestMethod]
+        public void PhoneNumberHasWrongFormat()
+        {
+            customer.Phone = 29870;
+            Assert.IsFalse(customer.CheckPhoneNumberFormat(customer.Phone));
+        }
+
+        [TestMethod]
+        public void PhoneNumberHasGoodFormat()
+        {
+            customer.Phone = 74980225;
+            Assert.IsTrue(customer.CheckPhoneNumberFormat(customer.Phone));
+        }
          
     }
 

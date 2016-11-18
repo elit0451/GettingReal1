@@ -38,5 +38,19 @@ namespace PrettyHair1
             string value = number.ToString("## ## ## ##");
             return value; 
         }
+
+        public bool CheckPhoneNumberFormat(decimal phone)
+        {
+            bool IsEnoughLength = true;
+            if (phone.ToString().Length != 8)
+            {
+                IsEnoughLength = false;
+            }
+            else
+            {
+                IsEnoughLength = true;
+            }
+            return IsEnoughLength;
+        }
     }
 }

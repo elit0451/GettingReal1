@@ -39,6 +39,22 @@ namespace PrettyHair
             lastName = Console.ReadLine();
             Console.WriteLine("Enter a telephone number of the customer:");
             phone = decimal.Parse(Console.ReadLine());
+            do
+            {
+                if (customer.CheckPhoneNumberFormat(phone) == false)
+                {
+                    Console.WriteLine("Write format! Please try again:");
+                    Console.ReadKey();
+                    Console.Clear();
+                    Console.WriteLine("Enter a name of the customer:");
+                    Console.WriteLine(firstName);
+                    Console.WriteLine("Enter a surname of the customer:");
+                    Console.WriteLine(lastName);
+                    Console.WriteLine("Enter a telephone number of the customer:");
+                    phone = decimal.Parse(Console.ReadLine());
+                }
+            } while (customer.CheckPhoneNumberFormat(phone) == false); 
+
             Console.Clear();
             Console.WriteLine("Name -" + " " + customer.ChangeName(firstName));
             Console.WriteLine("Surname -" + " " + customer.ChangeName(lastName));
