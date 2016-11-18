@@ -36,9 +36,8 @@ namespace PrettyHair1
         {
             decimal number = phone;
             string value = number.ToString("## ## ## ##");
-            return value; 
+            return value;
         }
-
         public bool CheckPhoneNumberFormat(decimal phone)
         {
             bool IsEnoughLength = true;
@@ -54,3 +53,4 @@ namespace PrettyHair1
         }
     }
 }
+
