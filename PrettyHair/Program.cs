@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using PrettyHair1;
 
 
@@ -57,7 +55,8 @@ namespace PrettyHair
             //string phoneString = decimal.Parse(Console.ReadLine()).ToString();
             do
             {
-                if (customer.CheckPhoneNumberFormat(phone) == false || CheckPhoneNumberForSomethingDifferentThanDigits(phoneString) == false)
+                if (CheckPhoneNumberForSomethingDifferentThanDigits(phoneString) == false)
+                //if (customer.CheckPhoneNumberFormat(phone) == false || CheckPhoneNumberForSomethingDifferentThanDigits(phoneString) == false)
                 {
                     Console.WriteLine("Wrong format! Please try again:");
                     Console.ReadKey();
@@ -68,9 +67,21 @@ namespace PrettyHair
                     Console.WriteLine(lastName);
                     Console.WriteLine("Enter a telephone number of the customer:");
                     phoneString = Console.ReadLine();
+                }
+                   else if (customer.CheckPhoneNumberFormat(System.Convert.ToDecimal(phoneString)) == false)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Enter a name of the customer:");
+                    Console.WriteLine(firstName);
+                    Console.WriteLine("Enter a surname of the customer:");
+                    Console.WriteLine(lastName);
+                    Console.WriteLine("Enter a telephone number of the customer:");
+                    phone = decimal.Parse(Console.ReadLine());
+                
+                    Console.ReadKey();
                     //phone = decimal.Parse(Console.ReadLine());
                 }
-                else if (customer.CheckPhoneNumberFormat(phone) == true && CheckPhoneNumberForSomethingDifferentThanDigits(phoneString) == true)
+                /*else if (customer.CheckPhoneNumberFormat(phone) == true && CheckPhoneNumberForSomethingDifferentThanDigits(phoneString) == true)
                 {
                     
                     Console.WriteLine("Enter a name of the customer:");
@@ -79,7 +90,7 @@ namespace PrettyHair
                     Console.WriteLine(lastName);
                     Console.WriteLine("Enter a telephone number of the customer:");
                     phone = decimal.Parse(Console.ReadLine());
-                }
+                }*/
             } while (customer.CheckPhoneNumberFormat(phone) == false || CheckPhoneNumberForSomethingDifferentThanDigits(phoneString) == false);
 
             Console.Clear();
