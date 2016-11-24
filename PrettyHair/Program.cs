@@ -26,7 +26,7 @@ namespace PrettyHair
             phone = ReadLine("telephone number");
 
             Console.Clear();
-            Console.WriteLine("Name -" + " " + customer.ChangeName(firstName));
+            Console.WriteLine("First name -" + " " + customer.ChangeName(firstName));
             Console.WriteLine("Last name -" + " " + customer.ChangeName(lastName));
             Console.WriteLine("Telephone number -" + " " + customer.SplitPhoneNumber(phone));
             Console.ReadKey();
