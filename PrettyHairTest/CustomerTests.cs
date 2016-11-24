@@ -71,11 +71,12 @@ namespace PrettyHairTest
         }
 
         [TestMethod]
-        public void ShouldSeparateEachPairOfNumbersIfTheImputIsAlsoWithSpace()
+        public void ShouldDeleteWhiteSpacesFromTheImput()
         {
             customer.Phone = "223 4094 2";
             Assert.AreEqual("22 34 09 42", customer.SplitPhoneNumber(customer.Phone));
         }
+        
 
     }
 }

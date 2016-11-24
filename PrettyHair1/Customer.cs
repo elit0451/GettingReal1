@@ -43,7 +43,7 @@ namespace PrettyHair1
         public bool CheckPhoneNumberFormat(string phone)
         {
             bool IsEnoughLength = true;
-            if (phone.Length != 8)
+            if (phone.Replace(" ", String.Empty).Length != 8)
             {
                 IsEnoughLength = false;
             }
