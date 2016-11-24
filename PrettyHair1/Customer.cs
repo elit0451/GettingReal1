@@ -8,14 +8,14 @@ namespace PrettyHair1
 {
     public class Customer
     {
-        public decimal Phone { get; set; }
+        public string Phone { get; set; }
 
         public string Name { get; set; }
         public Customer()
         {
 
         }
-        public Customer(string name, decimal phone)
+        public Customer(string name, string phone)
         {
             Name = name;
             Phone = phone;
@@ -32,16 +32,18 @@ namespace PrettyHair1
             }
             return holdingWord.Trim();
         }
-        public string SplitPhoneNumber(decimal phone)
+        public string SplitPhoneNumber(string phone)
         {
-            decimal number = phone;
-            string value = number.ToString("## ## ## ##");
-            return value;
+            phone = phone.Replace(" ", String.Empty);
+            string number = phone.Insert(6, " ");
+            number = number.Insert(4, " ");
+            number = number.Insert(2, " ");
+            return number;
         }
-        public bool CheckPhoneNumberFormat(decimal phone)
+        public bool CheckPhoneNumberFormat(string phone)
         {
             bool IsEnoughLength = true;
-            if (phone.ToString().Length != 8)
+            if (phone.Length != 8)
             {
                 IsEnoughLength = false;
             }

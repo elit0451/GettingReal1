@@ -18,7 +18,7 @@ namespace PrettyHair
         {
             string firstName = "";
             string lastName = "";
-            decimal phone = 0;
+            string phone = "";
             Console.WriteLine("Enter a name of the customer:");
             firstName = Console.ReadLine();
             do
@@ -50,13 +50,12 @@ namespace PrettyHair
             } while (CheckName(lastName) == false);
 
             Console.WriteLine("Enter a telephone number of the customer:");
-            string phoneString = phone.ToString();
-            phoneString = Console.ReadLine();
+            phone = Console.ReadLine();
             //string phoneString = decimal.Parse(Console.ReadLine()).ToString();
             do
             {
-                if (CheckPhoneNumberForSomethingDifferentThanDigits(phoneString) == false)
-                //if (customer.CheckPhoneNumberFormat(phone) == false || CheckPhoneNumberForSomethingDifferentThanDigits(phoneString) == false)
+                //if (CheckPhoneNumberForSomethingDifferentThanDigits(phoneString) == false)
+                if (customer.CheckPhoneNumberFormat(phone) == false || CheckPhoneNumberForSomethingDifferentThanDigits(phone) == false)
                 {
                     Console.WriteLine("Wrong format! Please try again:");
                     Console.ReadKey();
@@ -66,9 +65,9 @@ namespace PrettyHair
                     Console.WriteLine("Enter a surname of the customer:");
                     Console.WriteLine(lastName);
                     Console.WriteLine("Enter a telephone number of the customer:");
-                    phoneString = Console.ReadLine();
+                    phone = Console.ReadLine();
                 }
-                   else if (customer.CheckPhoneNumberFormat(System.Convert.ToDecimal(phoneString)) == false)
+                   else if (customer.CheckPhoneNumberFormat(phone) == false)
                 {
                     Console.Clear();
                     Console.WriteLine("Enter a name of the customer:");
@@ -76,11 +75,11 @@ namespace PrettyHair
                     Console.WriteLine("Enter a surname of the customer:");
                     Console.WriteLine(lastName);
                     Console.WriteLine("Enter a telephone number of the customer:");
-                    phone = decimal.Parse(Console.ReadLine());
-                
+                    phone = Console.ReadLine();
+
                     Console.ReadKey();
                     //phone = decimal.Parse(Console.ReadLine());
-                }
+                } 
                 /*else if (customer.CheckPhoneNumberFormat(phone) == true && CheckPhoneNumberForSomethingDifferentThanDigits(phoneString) == true)
                 {
                     
@@ -91,7 +90,7 @@ namespace PrettyHair
                     Console.WriteLine("Enter a telephone number of the customer:");
                     phone = decimal.Parse(Console.ReadLine());
                 }*/
-            } while (customer.CheckPhoneNumberFormat(phone) == false || CheckPhoneNumberForSomethingDifferentThanDigits(phoneString) == false);
+            } while (customer.CheckPhoneNumberFormat(phone) == false || CheckPhoneNumberForSomethingDifferentThanDigits(phone) == false);
 
             Console.Clear();
             Console.WriteLine("Name -" + " " + customer.ChangeName(firstName));
@@ -120,7 +119,7 @@ namespace PrettyHair
         {
             List<char> numbers = new List<char> { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
             bool IsOnlyInts = true;
-            foreach (char digit in phoneString.ToString())
+            foreach (char digit in phoneString)
             {
                 if (phoneString.Contains(digit))
                 {
