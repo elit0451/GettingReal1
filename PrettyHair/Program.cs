@@ -65,7 +65,6 @@ namespace PrettyHair
             }
             return IsOnlyInts;
         }
-        // --------------------------------------------------------------------------
         public string ReadLine(string parameter)
         {
             string openingSentence = "Enter the " + parameter + " of the customer:";
@@ -104,63 +103,6 @@ namespace PrettyHair
             }
             return input;
         }
-
-
-        //-----------------------------------------------------------------------------
-        /* public string TakeCustomerDetails(string data)
-        {
-            string openingSentence = "Enter the " + data + " of the customer:";
-            string message = "Wrong format! Please try again:";
-            do
-            {
-                Console.WriteLine(openingSentence);
-                string input = Console.ReadLine();
-                if (data == "first name")
-                {
-                    firstName = input;
-                    if (CheckName(firstName) == false)
-                    {
-                        Console.WriteLine(message);
-                        Console.ReadKey();
-                        Console.Clear();
-                        firstName = TakeCustomerDetails(data);
-                    }
-                    
-                }
-                if (data == "last name")
-                {
-                    lastName = input;
-                    if (CheckName(lastName) == false)
-                    {
-                        Console.WriteLine(message);
-                        Console.ReadKey();
-                        Console.Clear();
-                        Console.WriteLine(openingSentence);
-                        lastName = Console.ReadLine();
-
-                    }
-                }
-                if (data == "telephone number")
-                {
-                    phone = input;
-                    if (customer.CheckPhoneNumberFormat(phone) == false || CheckPhoneNumberForSomethingDifferentThanDigits(phone) == false)
-                    {
-                        Console.WriteLine(message);
-                        Console.ReadKey();
-                        Console.Clear();
-                        Console.WriteLine(openingSentence);
-                        phone = Console.ReadLine();
-                    }
-                }
-            } while (CheckName(firstName) == false || CheckName(lastName) == false || customer.CheckPhoneNumberFormat(phone) == false || CheckPhoneNumberForSomethingDifferentThanDigits(phone) == false);
-            Console.Clear();
-            Console.WriteLine("Name -" + " " + customer.ChangeName(firstName));
-            Console.WriteLine("Last name -" + " " + customer.ChangeName(lastName));
-            Console.WriteLine("Telephone number -" + " " + customer.SplitPhoneNumber(phone));
-            Console.ReadKey();
-            return data;
-        }*/
-        // --------------------------------------------------------------------------------
     }
 }
 
